@@ -1,0 +1,90 @@
+<html lang="eng">
+
+<head>
+    <meta charset="utf-8">
+    <title>e-ticaret sayfam</title>
+    <link rel="stylesheet" type="text/css" href=kayıtStillerim.css>
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function kaydet() {
+            var bayrak = true;
+            var mesaj = "";
+            var parola = document.getElementById("parola");
+            var tparola = document.getElementById("tparola");
+            var hata = document.getElementById("hata");
+            var email = document.getElementById("email");
+            if (parola.value == null || parola.value == "") {
+                mesaj += "Parola değerini boş olarak geçemezsiniz." + "<br>";
+                bayrak = false;
+            }
+            if (tparola.value == null || tparola.value == "") {
+                mesaj += "Parola Tekrarınıda değerini boş olarak geçemezsiniz." + "<br>";
+                bayrak = false;
+            }
+            if (parola.value != tparola.value) {
+                bayrak = false;
+                mesaj += "Parola ile Parola Tekrarının aynı olması gerekiyor." + "<br>";
+            }
+            if (parola.value.length < 5) {
+                bayrak = false;
+                mesaj += "Parola en az 5 karakter olmalıdır." + "<br>";
+            }
+            if (email.value == "" || email.value == null) {
+                mesaj += "Email değerini boş olarak geçemezsiniz." + "<br>";
+                bayrak = false;
+            }
+            hata.innerHTML = mesaj;
+            return bayrak;
+
+        }
+    </script>
+</head>
+
+<body>
+    <br><br><br>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-9" style="background-color:rgb(247, 238, 238);width:50%;">
+            <form method="post" action="haqi.html">
+                <div class="row">
+                    <div class="col-lg-3">Email:</div>
+                    <div class="col-lg-5"><input type="text" id="email" name="email" value="bla@gmail.com"
+                            style="background-color:rgb(255, 250, 250);"><br><br></div>
+                </div>
+            </form>
+
+            <form method="post" action="haqi.html">
+                <div class="row">
+                    <div class="col-lg-3">Parola :</div>
+                    <div class="col-lg-5">
+                        <input type="text" name="parola" id="parola" style="background-color:rgb(255, 250, 250);">
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">Parola Tekrarı:</div>
+                    <div class="col-lg-5"><input type="text" name="parola" id="tparola"
+                            style="background-color:rgb(255, 250, 250);">
+                    </div>
+                    <div class="col-lg-4"></div>
+
+                    <div class="col-lg-12"><input type="submit" name="btn1" id="btn1"
+                            style="background-color: rgb(255, 250, 250);" value="Kayıt Ol" onclick="return kaydet()">
+                    </div>
+                    <br><br>
+                </div>
+        </div>
+        <p id="hata" style="font-family: 'Courier New', Courier, monospace;background-color:rgb(255, 250, 250);"></p>
+        </form>
+    </div>
+    </div>
+
+</body>
+</body>
+
+</html>

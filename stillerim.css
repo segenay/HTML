@@ -1,0 +1,40 @@
+a:hover{
+  color: black;
+  text-decoration: none;
+}
+
+body{
+  text-decoration: none;
+  color: black;
+}
+.ustorta{
+    height: 50%;
+}
+.ustortasol{
+    height:96%;
+    width:50%;
+    float: left;
+}
+.ustortasag{
+    background-color:pink;
+    height: 96%;
+    width: 50%;
+    float: right;
+    background-image: url("arkaplan1.png");
+}
+.altorta{
+    height: 50%;
+}
+.altortasol{
+    background-color:white;
+    height: 96%;
+    width: 50%;
+    float: left;
+    background-image: url("arkaplan2.png");  
+}
+.altortasag{
+  height: 96%;
+  width: 50%;
+  float: right;
+}
+
